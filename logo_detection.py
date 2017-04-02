@@ -1,7 +1,7 @@
 from __future__ import print_function
 from google.cloud import vision
 client = vision.Client()
-image = client.image(source_uri='gs://gracewan-images-bucket/logos.png')
+image = client.image(filename='res/logos.png')
 logos = image.detect_logos(limit=10)
 for i, logo in enumerate(logos):
     print('Logo {0}:'.format(i+1))

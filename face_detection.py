@@ -1,7 +1,7 @@
 from __future__ import print_function
 from google.cloud import vision
 client = vision.Client()
-image = client.image(source_uri='gs://gracewan-images-bucket/selfie.png')
+image = client.image(filename='res/selfie.png')
 faces = image.detect_faces(limit=10)
 for i, face in enumerate(faces):
     print('Face {0}:'.format(i+1))
